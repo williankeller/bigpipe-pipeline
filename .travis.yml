@@ -1,0 +1,9 @@
+sudo: false
+language: php
+dist: trusty
+
+php:
+  - 7.1
+
+script:
+  - ./vendor/bin/phpcs --standard=PSR2 src/lib/
