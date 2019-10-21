@@ -4,14 +4,12 @@ dist: trusty
 
 php:
   - 7.1
-  - 7.2
 
 before_install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - composer global require squizlabs/php_codesniffer
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 install: travis_retry composer update --prefer-dist
 
 script:
-  - vendor/bin/phpcs --standard=PSR2 src/lib/
+  - ./vendor/bin/phpcs --standard=PSR2 src/lib/
