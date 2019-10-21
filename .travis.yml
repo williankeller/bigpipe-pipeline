@@ -5,5 +5,8 @@ dist: trusty
 php:
   - 7.1
 
+before_install:
+  - composer global require "squizlabs/php_codesniffer=*"
+
 script:
-  - ./vendor/bin/phpcs --standard=PSR2 src/lib/
+  - vendor/bin/phpcs --standard=PSR2 src/lib/
