@@ -19,8 +19,6 @@ start downloading the required CSS, JavaScript and processing it.
 
 
 ### Install via composer (recommended)
-
-Run the following command in Magento 2 root folder:
 ```sh
 composer create-project wkeller/bigpipe-pipeline
 ```
