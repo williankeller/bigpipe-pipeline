@@ -1,20 +1,29 @@
 
 ## BigPipe: Pipelining web pages for high performance
+[![Build Status](https://travis-ci.org/williankeller/big-pipe.svg?branch=master)](https://travis-ci.org/williankeller/big-pipe) 
+[![Packagist](https://img.shields.io/packagist/v/wkeller/bigpipe-pipeline.svg)](https://packagist.org/packages/wkeller/bigpipe-pipeline) 
+[![Downloads](https://img.shields.io/packagist/dt/wkeller/bigpipe-pipeline.svg)](https://packagist.org/packages/wkeller/bigpipe-pipeline)
+
 Bigpipe is a feature originally created by facebook: 
 [BigPipe: Pipelining web pages for high performance.](https://engineering.fb.com/web/bigpipe-pipelining-web-pages-for-high-performance/)
-Basically what it does is make page load time faster, page content is divided into parts called "Pagelets" and can 
-load some of them simultaneously or item-by-item.
-
 The general idea is to break down web pages into small reusable pieces of functionality 
 called Pagelets and separate them into various stages of execution within web servers and browsers. This enables 
 progressive front-end rendering and results in exceptional front-end performance.
 
 
-### Our source code:
+### Our library code:
 Most web frameworks are based on a request and response pattern, one request arrives, we process the data and output 
 of a model. But before we can issue the model we have to wait until all the data has been received before the model 
 can be processed. When you receive your first batch of data, why not send it directly to the browser so that it can 
 start downloading the required CSS, JavaScript and processing it.
+
+
+### Install via composer (recommended)
+
+Run the following command in Magento 2 root folder:
+```sh
+composer create-project wkeller/bigpipe-pipeline
+```
 
 ### Methods to use it:
 * **addContent()** _(add content to the some DOM element)_
