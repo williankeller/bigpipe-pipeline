@@ -1,6 +1,11 @@
 <?php
 require dirname(__DIR__) . '/vendor/autoload.php';
 
+/**
+ * This file is jus an example how you can structure the executions.
+ * In your project, it's better to initiate the Pagelet class using DI.
+ */
+
 use BigPipe\Lib;
 
 // Initiating Pagelet element.
