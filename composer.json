@@ -1,7 +1,7 @@
 {
     "name": "wkeller/bigpipe-pipeline",
     "description": "BigPipe: Pipelining web pages for high performance built in PHP.",
-    "type": "project",
+    "type": "library",
     "keywords": [
         "bigpipe",
         "pipeline",
