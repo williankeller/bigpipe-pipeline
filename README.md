@@ -1,6 +1,6 @@
 
 ## BigPipe: Pipelining web pages for high performance
-[![Build Status](https://travis-ci.org/williankeller/big-pipe.svg?branch=master)](https://travis-ci.org/williankeller/big-pipe) 
+[![Build Status](https://travis-ci.org/williankeller/bigpipe-pipeline.svg?branch=master)](https://travis-ci.org/williankeller/bigpipe-pipeline) 
 [![Packagist](https://img.shields.io/packagist/v/wkeller/bigpipe-pipeline.svg)](https://packagist.org/packages/wkeller/bigpipe-pipeline) 
 [![Downloads](https://img.shields.io/packagist/dt/wkeller/bigpipe-pipeline.svg)](https://packagist.org/packages/wkeller/bigpipe-pipeline)
 
@@ -33,68 +33,68 @@ composer create-project wkeller/bigpipe-pipeline
 
 **Adding static text content:**
 ```php
-/** Initiate Pagelet (creates new div with ID) **/
+// Initiate Pagelet (creates new div with ID)
 $element = new Pagelet('static-text');
 
-/** Adding the text content inside of the DIV element **/
+// Adding the text content inside of the DIV element
 $element->addContent('Static text content inside of the "static-text" DIV element.');
 
-/** Priting Pagelet element **/
+// Priting Pagelet element
 echo $element;
 ```
 
 **Adding external file:**
 Possible files to be loaded: PHP, HTML and more.
 ```php
-/** Initiate Pagelet (creates new div with ID) **/
+// Initiate Pagelet (creates new div with ID)
 $element = new Pagelet('it-is-a-file');
 
-/** Adding the content of the file inside of the DIV element **/
+// Adding the content of the file inside of the DIV element
 $element->addContent('path/to/file/filename.php', true);
 
-/** Priting Pagelet element **/
+// Priting Pagelet element
 echo $element;
 ```
 
 **Adding CSS no head**
 ```php
-/** Initiate Pagelet **/
+// Initiate Pagelet
 $element = new Pagelet('css');
         
-/** Adding style files to the head **/
+// Adding style files to the head
 $pagelet->addCss([
   'path/to/file/style.css',
   'path/to/file/fonts.css'
 ]);
 
-/** Priting Pagelet element **/
+// Priting Pagelet element
 echo $element;
 ```
 
 **Adding JavaScript files to the footer of the page:**
 ```php
-/** Initiate Pagelet **/
+// Initiate Pagelet
 $element = new Pagelet('javascript');
         
-/** Adding JavaScript files to the footer **/
+// Adding JavaScript files to the footer
 $pagelet->addJS([
   'path/to/file/jQuery.js',
   'path/to/file/script.js'
 ]);
 
-/** Priting Pagelet element **/
+// Priting Pagelet element
 echo $element;
 ```
 
 **Adding inline JavaScript content:**
 ```php
-/** Initiate Pagelet **/
+// Initiate Pagelet
 $element = new Pagelet('javascript-inline');
         
-/** Adicionando javascript inline **/
+// Adicionando javascript inline
 $pagelet->addJsScript("$('static-text').innerHTML = 'Changing static content';");
 
-/** Priting Pagelet element **/
+// Priting Pagelet element
 echo $element;
 ```
 
@@ -106,16 +106,16 @@ With that, it's possible to set priority to the Pagelets you are loading. Let's 
 content as last content:
 
 ```php
-/** Initiate Pagelet **/
+// Initiate Pagelet
 $element = new Pagelet('footer', null, 30);
         
-/** Adding JavaScript files to the footer **/
+// Adding JavaScript files to the footer
 $pagelet->addJS(['path/to/file/footer.js']);
 
-/** Adding the text content inside of the DIV element **/
+// Adding the text content inside of the DIV element
 $element->addContent('Footer content goes here.');
 
-/** Priting Pagelet element **/
+// Priting Pagelet element
 echo $element;
 ```
 
